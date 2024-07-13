@@ -1,0 +1,20 @@
+{
+  "name": "configurable-npc-dodge",
+  "version-semver": "1.0.0",
+  "description": "",
+  "license": "GPL-3.0",
+  "dependencies": [
+    "fmt",
+    "directxtk",
+    "rapidcsv",
+    "spdlog",
+    "xbyak",
+    "catch2",
+    "magic-enum",
+    "nlohmann-json",
+    "clib-util",
+
+    "tomlplusplus"
+  ],
+  "builtin-baseline": "83972272512ce4ede5fc3b2ba98f6468b179f192"
+}

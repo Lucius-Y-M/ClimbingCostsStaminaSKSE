@@ -1,0 +1,52 @@
+
+#   Climbing Costs Stamina - SKSE - For EVG Animated Traversal Mods
+#       by: LuciusP24
+#
+#   Config File 
+
+
+
+
+
+## This setting determines if an EVGAT action (esp. ledge upward, but also other animations)
+## should ALWAYS cost *AT LEAST* this much stamina.
+##
+## For example, if set to 20.0, then for example, climbing up a ledge using SkyClimb,
+## or hiking via Jayserpa's "Ascend" mod,
+## will always cost 20.0 stamina.
+##
+## Note 1: if player current Stamina < Base Cost, then the EVGAT action will fail.
+## Note 2: if you want, you can DISABLE the base cost. Simply place a '#' symbol in front of the line, so it becomes:
+##
+##      #fBaseCost   = 20.0      
+## This way, this setting will not be read. This is good if you want the stamina cost
+## to be dependent on inventory weight only.
+##
+fBaseCost   = 20.0
+
+
+## The two settings below determine together how player's inventory weight impacts the stamina cost.
+## "fCutoff" : at which point player's inventory weight begins to matter.
+## "fCostMult" : how much does it matter?
+##
+## So for example, if player inventory weight currently = 300.0,
+## we set "fCutoff" = 250.0, and "fCostMult" = 0.3,
+## then this means the EVGAT action will cost AT LEAST
+##
+##      (300.0 - 250.0) * 0.3 = 50.0 * 0.3 = 15.0
+##
+## units of stamina.
+##
+## Note 1:  These two settings can be combined with "fBaseCost", so if all three are enabled,
+##          and let's say "fBaseCost" = 20.0, then in the example above, you need
+##          20.0 + 15.0 = 35.0 stamina to perform an EVGAT action.
+##
+## Note 2:  If you only want a base cost but no additional player-weight-dependent extra cost,
+##          you can disable the two settings below too,
+##          just put a '#' symbol before both lines, to make them become:
+##
+##              #fCutoff     = 150.0
+##              #fCostMult   = 0.2
+
+fCutoff     = 150.0
+fCostMult   = 0.2
